@@ -15,7 +15,7 @@ const mostrar = () => {
     const c = document.getElementById("c").value
 
     const respueta = calcular(a,b,c)
-    document.getElementById("h_resultado")..texcontent = respuesta
+    document.getElementById("h_resultado").texcontent = respuesta
 
     
 
