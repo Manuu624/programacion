@@ -22,6 +22,6 @@ function mostrar(){
     const select = document.getElementById("slt_opcion").value
     const dato1 = document.getElementById("inp_dato1").value
     const dato2 = document.getElementById("inp_dato2").value
-    const respuesta = calcular (select,dato1,dato2)
+    const respuesta = calcular(select,dato1,dato2)
     document.getElementById("h_resultado").textContent = respuesta
 }
