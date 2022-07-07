@@ -13,7 +13,7 @@ export default class Producto{
         }
 
         if("productos" in localStorage){
-            /convertimos el JSON ontenido desde el storage en una expresion nativa de javascript/
+            //convertimos el JSON ontenido desde el storage en una expresion nativa de javascript
             let lista_productos = JSON.parse(localStorage.getItem("productos") )
             lista_productos.push(nuevo_producto)
             localStorage.setItem("productos",JSON.stringify(lista_productos) )
@@ -46,8 +46,12 @@ export default class Producto{
                 <td>${element.precio_venta}</td>
                 <td>${element.categoria}</td>
                 <td>
-                    <button class="btn btn-danger btm-sm">
-                        <i class="fa fa-trash"></i>
+                    <button onclick ="almacenar_indice(${index})" class="btn btn-danger btm-sm">
+                        <i class="fa fa-trash" data-bs-toggle="modal" data-bs-target="#mymodal"></i>
+                    </button>
+
+                    <button onclick="editar(${index})" class="btn btn-primary btn-sm">
+                        <i class="fa fa-edit"></i>
                     </button>
                 </td>
             </tr>  
@@ -56,6 +60,18 @@ export default class Producto{
             
         });
         document.getElementById("tbody").innerHTML = filas.join('')
+
+    }
+
+    eliminar_producto(indice)
+    {
+       let lista_productos = JSON.parse(localStorage.getItem("productos"))
+       
+       lista_productos.splice(indice,1)
+
+       localStorage.setItem("productos", JSON.stringify(lista_productos ))
+
+       this.obtener_productos()
 
     }
 }

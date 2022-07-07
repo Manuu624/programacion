@@ -13,7 +13,29 @@ function guardar()
     //perteneciente a la clase Producto
 
     producto.guardar_producto()
+}
+document.getElementById("btn_guardar").addEventListener("click",guardar)
+
+function listar(){
+    let producto = new Producto
+    producto.obtener_productos()
+}
+listar()
+
+function eliminar()
+{
+    let indice = localStorage.getItem("indice")
+
+    //creamos una instancia
+    // para acceder a los metodos y artributos de la clase Producto
+    let producto = new Producto()
+
+    //haciendo uso de la instancia
+    //invocamos al metodo eliminar_producto()
+    
+    producto.eliminar_producto(indice)
 
 }
 
-document.getElementById("btn_guardar").addEventListener("click",guardar)
+document.getElementById("btn_eliminar").addEventListener("click",eliminar)
+
