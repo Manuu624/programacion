@@ -15,9 +15,9 @@ async function obtener_productos() {
             <div class="col-lg-3">
 
             <div class="card" style="width: 18rem;">
-                <img height="350" src="${element.image}" class="card-img-top" alt="...">
+                <img height="350" src="${element.imagen}" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">${element.title}</h5>
+                    <h5 class="card-title">${element.descripcion}</h5>
                     <p class="card-text">$${element.price}</p>
                     <a href="#" class="btn btn-primary">Comprar</a>
                 </div>
